@@ -6,6 +6,9 @@ from ball import Ball
 from stick import Stick
 from brick import Brick
 
+def funkcja_Ni():
+    print('Ni')
+
 def run_game():
     pygame.init()
     ai_settings = Settings()
