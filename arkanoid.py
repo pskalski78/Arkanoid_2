@@ -9,6 +9,9 @@ from pygame.sprite import Sprite , Group
 
 
 
+def funkcja_Ni():
+    print('Ni')
+
 def run_game():
     pygame.init()
     ai_settings = Settings()
