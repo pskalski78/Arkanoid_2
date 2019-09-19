@@ -5,6 +5,9 @@ from settings import Settings
 from ball import Ball
 from stick import Stick
 from brick import Brick
+from pygame.sprite import Sprite , Group
+
+
 
 def run_game():
     pygame.init()
@@ -17,12 +20,32 @@ def run_game():
     #the ball
     # ball = Ball(screen, ai_settings)
     stick = Stick(screen, ai_settings)
-    brick = Brick(screen, ai_settings)
+    #brick = Brick(screen, ai_settings)
 
     balls = []
     for i in range(3):
         ball = Ball(screen,ai_settings)
         balls.append(ball)
+
+
+    wall = Group()
+
+    brick = Brick(screen, ai_settings)
+    brick_width = brick.rect.width
+    brick_height = brick.rect.height
+
+    number = 14
+    for brick_number in range (number):
+
+        brick = Brick(screen, ai_settings)
+        brick.x = brick_width + 1.5* brick_width*brick_number
+        brick.rect.x = brick.x
+        wall.add(brick)
+
+
+
+
+
 
     #game loop
     while True:
@@ -57,6 +80,8 @@ def run_game():
         stick.update()
 
         brick.blitme()
+        for brick in wall.sprites():
+            brick.blitme()
 
         for ball in balls:
             ball.update()

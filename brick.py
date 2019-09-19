@@ -14,10 +14,10 @@ class Brick(Sprite):
         self.rect = self.image.get_rect()
 
         """ brick location """
-        self.rect.centerx = self.rect.width
-        self.rect.centery = 3*self.rect.height
+        self.rect.x = 1*self.rect.width
+        self.rect.y = 1*self.rect.height
 
-        self.center_x = float(self.rect.centerx)
+        self.x = float(self.rect.x)
 
     def blitme(self):
         """ show the brick """
