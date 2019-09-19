@@ -15,7 +15,7 @@ def run_game():
     screen = pygame.display.set_mode((ai_settings.screen_width,
                                       ai_settings.screen_height))
 
-    pygame.display.set_caption('Arkanoid')
+    pygame.display.set_caption('Arkanoid_2')
 
     #the ball
     # ball = Ball(screen, ai_settings)
