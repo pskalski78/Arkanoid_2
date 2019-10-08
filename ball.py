@@ -1,9 +1,10 @@
 import pygame
 import random
+from pygame.sprite import Sprite
 
-
-class Ball:
+class Ball(Sprite):
     def __init__(self, screen, ai_settings):
+        super().__init__()
         """Ball initialization and its initial position"""
 
         self.screen = screen
